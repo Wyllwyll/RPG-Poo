@@ -14,7 +14,7 @@ export class Character {
         this.strenght = strenght
         this.lvl = 1
         this.xp = 0
-        this.flying=false
+        this.flying = false
     }
 
 

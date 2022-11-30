@@ -1,7 +1,6 @@
-export class Ennemy extends Character {
-    name:string;
-    
-    constructor(parameters) {
-        
-    }
+import { Character } from "./Character";
+
+export class Enemy extends Character {  
+
+    setDamage
 }
