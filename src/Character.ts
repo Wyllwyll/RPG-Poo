@@ -8,12 +8,13 @@ export class Character {
 
 
 
-    constructor(name: string, health: number, strenght: number, lvl: number, xp: number) {
+    constructor(name: string, health: number, strenght: number) {
         this.name = name
         this.health = health
         this.strenght = strenght
         this.lvl = 1
         this.xp = 0
+        this.flying=false
     }
 
 

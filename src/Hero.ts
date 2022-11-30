@@ -4,8 +4,8 @@ export class Hero extends Character {
     private race: string
 
 
-    constructor(name: string, health: number, strenght: number, lvl: number, xp: number) {
-        super(name, health, strenght, lvl, xp);
+    constructor(name: string, health: number, strenght: number) {
+        super(name, health, strenght);
 
     }
 
