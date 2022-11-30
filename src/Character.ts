@@ -63,4 +63,9 @@ export class Character {
         return "bye bye " + this.name;
 
     }
+
+    setDamage(damage: number){
+        this.setHealth(this.getHealth() - damage);
+    }
+
 }
