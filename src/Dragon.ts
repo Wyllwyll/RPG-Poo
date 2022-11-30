@@ -1,16 +1,14 @@
 import { Character } from "./Character";
-import { Enemy } from "./enemy";
-
+import { Enemy } from "./Enemy";
 export class Dragon extends Enemy{
-
-    constructor(name: string, health: number, strenght: number) {
-        super(name, health, strenght);
+    constructor(name: string, health: number, strength: number) {
+        super(name, health, strength);
     }
     fly(){
         this.flying=true;
     }
     attackfromsky(opponent:Character){
-        opponent.setDamage(opponent.getHealth() - this.getStrenght()*1.1);
+        opponent.setDamage(opponent.getHealth() - this.getStrength()*1.1);
     }
     setDamage(damage: number): void {
         if (this.flying){
