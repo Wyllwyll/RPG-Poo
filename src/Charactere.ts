@@ -58,12 +58,7 @@ export class Chacactere {
 
 
     die() {
-        console.log("bye bye "+ this.name);
+        return "bye bye " + this.name;
 
     }
-
-
-
-
-
 }
