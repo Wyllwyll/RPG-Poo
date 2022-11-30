@@ -30,10 +30,10 @@ export class Hero extends Character {
             }
             case "Human": {
                 if (opponent.flying) {
-                    opponent.setHealth(opponent.getHealth() - this.getStrenght() * 0.9);
+                    opponent.setDamage(this.getStrenght() * 0.9);
                 }
                 else {
-                    opponent.setHealth(opponent.getHealth() - this.getStrenght() * 1.10);
+                    opponent.setDamage(this.getStrenght() * 1.10);
                 }
                 break
             }
@@ -43,4 +43,20 @@ export class Hero extends Character {
             }
         }
     }
+
+    setDamage(damage: number) {
+        if (this.race == "Dwarf" && (Math.random() * 100) <= 20) {
+            this.setHealth(this.getHealth() - damage / 2)
+        }
+        else {
+            this.setDamage(this.getStrenght())
+        }
+    }
+
+
+
+
+
+
+
 }
