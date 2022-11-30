@@ -1,9 +1,10 @@
-export class Chacactere {
+export class Character {
     private name: string
     private health: number
     private strenght: number
     private lvl: number
     private xp: number
+    flying: boolean
 
 
 
@@ -11,8 +12,8 @@ export class Chacactere {
         this.name = name
         this.health = health
         this.strenght = strenght
-        this.lvl = lvl
-        this.xp = xp
+        this.lvl = 1
+        this.xp = 0
     }
 
 
@@ -52,7 +53,7 @@ export class Chacactere {
         return this.xp
     }
 
-    attack(opponent: Chacactere) {
+    attack(opponent: Character) {
         opponent.setHealth(opponent.getHealth() - this.getStrenght());
     }
 
