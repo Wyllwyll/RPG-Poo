@@ -46,7 +46,7 @@ export class Character {
     attack(opponent: Character): void {
         opponent.setHealth(opponent.getHealth() - this.getStrength());
     }
-    die() {
+    die(): string {
         return "bye bye " + this.name;
     }
     setDamage(damage: number): void {
@@ -54,10 +54,10 @@ export class Character {
     }
     raiseXp(xp: number): void {
         if ((this.getXp() + xp) >= 10) {
-            this.setXp(this.getXp()+xp-10);
-            this.setLvl(this.getLvl()+1);
-        }else{
-            this.setXp(this.getXp()+xp);
+            this.setXp(this.getXp() + xp - 10);
+            this.setLvl(this.getLvl() + 1);
+        } else {
+            this.setXp(this.getXp() + xp);
         }
     }
 }
