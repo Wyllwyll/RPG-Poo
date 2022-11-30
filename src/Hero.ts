@@ -20,10 +20,10 @@ export class Hero extends Character {
         switch (this.race) {
             case "Elf": {
                 if (opponent.flying) {
-                    opponent.setHealth(opponent.getHealth() - this.getStrenght() * 1.10);
+                    opponent.setDamage(this.getStrenght() * 1.10);
                 }
                 else {
-                    opponent.setHealth(opponent.getHealth() - this.getStrenght() * 0.9);
+                    opponent.setDamage(this.getStrenght() * 0.9);
 
                 }
                 break
@@ -38,7 +38,7 @@ export class Hero extends Character {
                 break
             }
             case "Dwarf": {
-                opponent.setHealth(opponent.getHealth() - this.getStrenght());
+                opponent.setDamage(this.getStrenght());
                 break
             }
         }
@@ -49,7 +49,7 @@ export class Hero extends Character {
             this.setHealth(this.getHealth() - damage / 2)
         }
         else {
-            this.setDamage(this.getStrenght())
+            this.setHealth(this.getHealth() - damage)
         }
     }
 
