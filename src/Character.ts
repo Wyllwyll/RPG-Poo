@@ -1,71 +1,63 @@
 export class Character {
-    private name: string
-    private health: number
-    private strenght: number
-    private lvl: number
-    private xp: number
-    flying: boolean
-
-
-
-    constructor(name: string, health: number, strenght: number) {
-        this.name = name
-        this.health = health
-        this.strenght = strenght
-        this.lvl = 1
-        this.xp = 0
-        this.flying = false
+    private name: string;
+    private health: number;
+    private strength: number;
+    private lvl: number;
+    private xp: number;
+    flying: boolean;
+    constructor(name: string, health: number, strength: number) {
+        this.name = name;
+        this.health = health;
+        this.strength = strength;
+        this.lvl = 1;
+        this.xp = 0;
+        this.flying = false;
     }
-
-
-    getName() {
-        return this.name
+    getName(): string {
+        return this.name;
     }
-    setName(name: string) {
+    setName(name: string): void {
         this.name = name
     }
-
-
-    getHealth() {
+    getHealth(): number {
         return this.health
     }
-    setHealth(health: number) {
+    setHealth(health: number): void {
         this.health = health
     }
-
-
-    getStrenght() {
-        return this.strenght
+    getStrength(): number {
+        return this.strength
     }
-    setStrengt(strenght: number) {
-        this.strenght = strenght
+    setStrength(strength: number): void {
+        this.strength = strength
     }
-
-
-    getLvl() {
+    getLvl(): number {
         return this.lvl
     }
-
-    setLvl(lvl: number) {
+    setLvl(lvl: number): void {
         this.lvl = lvl
     }
-
-    getXp() {
+    getXp(): number {
         return this.xp
     }
-
-    attack(opponent: Character) {
-        opponent.setHealth(opponent.getHealth() - this.getStrenght());
+    setXp(xp: number): void {
+        this.xp = xp
     }
-
-
-    die() {
+    attack(opponent: Character): void {
+        opponent.setHealth(opponent.getHealth() - this.getStrength());
+    }
+    die(): string {
         return "bye bye " + this.name;
-
     }
-
-    setDamage(damage: number){
+    setDamage(damage: number): void {
         this.setHealth(this.getHealth() - damage);
     }
-
+    raiseXp(xp: number): void {
+        if ((this.getXp() + xp) >= 10) {
+            this.setXp(this.getXp() + xp - 10);
+            this.setLvl(this.getLvl() + 1);
+        } else {
+            this.setXp(this.getXp() + xp);
+        }
+    }
 }

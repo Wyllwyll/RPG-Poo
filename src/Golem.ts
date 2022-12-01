@@ -1,13 +1,11 @@
-import { Enemy } from "./enemy";
-
+import { Enemy } from "./Enemy";
 export class Golem extends Enemy {
-    constructor(name: string, health: number, strengt: number) {
-        super(name, health, strengt)
+    constructor(name: string, health: number, strength: number) {
+        super(name, health, strength)
     }
-
-    setDamage(damage: number) {
+    setDamage(damage: number):void {
         if ((Math.random() * 100) <= 50) {
-            this.setHealth(this.getHealth() - damage)
+            this.setHealth(this.getHealth() - damage);
         }
     }
 }
