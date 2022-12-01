@@ -2,12 +2,33 @@ import { Character } from "./Character";
 import { Enemy } from "./enemy";
 
 export class griffin extends Enemy {
+    private round:number;
     constructor(name: string, health: number, strength: number) {
         super(name, health, strength);
+        this.round = 0;
+    }
+    attack(opponent: Character): string {
+        switch(this.round){
+            case 0 :{
+                super.attack(opponent);
+                this.round+=1;
+                break;
+            }
+            case 1 :{
+                this.fly();
+                this.round+=1;
+                break;
+            }
+            case 2 :{
+                this.attackfromsky(opponent);
+                this.round=0;
+                break;
+            }
+        }
+        return
     }
     fly(): void {
         console.log(this.getName,", le Griffin s'envole");
-        
         this.flying = true;
     }
     attackfromsky(opponent: Character): void {
