@@ -12,7 +12,7 @@ export class Hero extends Character {
         this.race = race;
     }
     attack(opponent: Character): string {
-        console.log("attaque du hero de race:");
+        console.log(this.getName()," de race:");
         
         switch (this.race) {
             case "Elf": {
