@@ -22,9 +22,14 @@ export class Battle {
                 console.log(this.opponent.getName()," attack :", this.opponent.attack(this.hero));
             }
             this.round += 1
+
         }
-
-
+/*        if (this.hero.isAlive()) {
+            return this.opponent.die()
+        }
+        else {
+            return this.opponent.die()
+        } */
 
 
     }
