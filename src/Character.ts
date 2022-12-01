@@ -1,6 +1,7 @@
 export class Character {
     private name: string;
     private health: number;
+    private currentHealth: number
     private strength: number;
     private lvl: number;
     private xp: number;
@@ -8,6 +9,7 @@ export class Character {
     constructor(name: string, health: number, strength: number) {
         this.name = name;
         this.health = health;
+        this.currentHealth = health;
         this.strength = strength;
         this.lvl = 1;
         this.xp = 0;
@@ -20,16 +22,19 @@ export class Character {
         this.name = name
     }
     getHealth(): number {
-        return this.health
+        return this.health;
     }
     setHealth(health: number): void {
-        this.health = health
+        this.currentHealth = health;
+    }
+    getCurrentHealth():number{
+        return this.currentHealth;
     }
     getStrength(): number {
-        return this.strength
+        return this.strength;
     }
     setStrength(strength: number): void {
-        this.strength = strength
+        this.strength = strength;
     }
     getLvl(): number {
         return this.lvl
@@ -46,9 +51,20 @@ export class Character {
     attack(opponent: Character): void {
         opponent.setHealth(opponent.getHealth() - this.getStrength());
     }
-    die(): string {
+    die(opponent: Character): string {
+        opponent.raiseXp(2);
         return "bye bye " + this.name;
     }
+
+    isAlive(): boolean {
+        if (this.getHealth() <= 0) {
+            return false
+        }
+        else {
+            return true
+        }
+    }
+
     setDamage(damage: number): void {
         this.setHealth(this.getHealth() - damage);
     }

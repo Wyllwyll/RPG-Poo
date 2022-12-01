@@ -1,8 +1,9 @@
 import { Character } from "./Character";
 export class Hero extends Character {
     private race: string;
-    constructor(name: string, health: number, strenght: number) {
+    constructor(name: string, health: number, strenght: number, race: string) {
         super(name, health, strenght);
+        this.race=race
     }
     getRace(): string {
         return this.race;
