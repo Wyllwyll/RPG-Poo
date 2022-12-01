@@ -5,7 +5,11 @@ export class Golem extends Enemy {
     }
     setDamage(damage: number):void {
         if ((Math.random() * 100) <= 50) {
+            console.log("degat sur Golem normaux", damage);
+            
             this.setHealth(this.getCurrentHealth() - damage);
+        }else{
+            console.log("Golem ne subit pas de dégat");
         }
     }
 }
