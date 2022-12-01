@@ -49,14 +49,8 @@ export class Hero extends Character {
             this.setHealth(this.getHealth() - damage / 2)
         }
         else {
-            this.setDamage(this.getStrenght())
+            this.setHealth(this.getHealth() - damage);
         }
     }
-
-
-
-
-
-
 
 }
