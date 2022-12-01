@@ -57,7 +57,7 @@ export class Character {
     }
     isAlive(): boolean {
         if (this.getCurrentHealth() <= 0) {
-            console.log(this.getName(),"en mort");
+            console.log(this.getName(),"est mort");
             
             return false
         }
@@ -80,7 +80,6 @@ export class Character {
             this.setXp(this.getXp() + xp - 10);
             this.setLvl(this.getLvl() + 1);
             console.log("nouveau niveau :",this.getLvl());
-            
 
         } else {
             this.setXp(this.getXp() + xp);
