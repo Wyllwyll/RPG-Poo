@@ -27,7 +27,7 @@ export class Character {
     setHealth(health: number): void {
         this.currentHealth = health;
     }
-    getCurrentHealth():number{
+    getCurrentHealth(): number {
         return this.currentHealth;
     }
     getStrength(): number {
@@ -48,8 +48,9 @@ export class Character {
     setXp(xp: number): void {
         this.xp = xp
     }
-    attack(opponent: Character): void {
-        opponent.setHealth(opponent.getHealth() - this.getStrength());
+    attack(opponent: Character): string {
+        opponent.setHealth(opponent.getCurrentHealth() - this.getStrength());
+        return this.name + " attaque " + opponent.name + " avec Strengh * lvl=> " + this.getStrength() * this.getLvl()
     }
     die(opponent: Character): string {
         opponent.raiseXp(2);
@@ -57,7 +58,7 @@ export class Character {
     }
 
     isAlive(): boolean {
-        if (this.getHealth() <= 0) {
+        if (this.getCurrentHealth() <= 0) {
             return false
         }
         else {
@@ -66,7 +67,7 @@ export class Character {
     }
 
     setDamage(damage: number): void {
-        this.setHealth(this.getHealth() - damage);
+        this.setHealth(this.getCurrentHealth() - damage);
     }
     raiseXp(xp: number): void {
         if ((this.getXp() + xp) >= 10) {

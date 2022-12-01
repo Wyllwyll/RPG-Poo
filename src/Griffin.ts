@@ -9,13 +9,13 @@ export class griffin extends Enemy {
         this.flying = true;
     }
     attackfromsky(opponent: Character): void {
-        opponent.setDamage(opponent.getHealth() - this.getStrength() * 1.1);
+        opponent.setDamage(opponent.getCurrentHealth() - this.getStrength() * 1.1);
     }
     setDamage(damage: number): void {
         if (this.flying) {
-            this.setHealth(this.getHealth() - damage * 0.9);
+            this.setHealth(this.getCurrentHealth() - damage * 0.9);
         } else {
-            this.setHealth(this.getHealth() - damage);
+            this.setHealth(this.getCurrentHealth() - damage);
         }
     }
 }

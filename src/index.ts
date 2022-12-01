@@ -5,7 +5,7 @@ import { Battle } from "./Bataille"
 import { Hero } from "./Hero"
 
 
-const So = new Hero("So", 100, 20, "Human")
+const So = new Hero("So", 100, 20, "Dwarf")
 
 const croissant = new Assassin("croissant", 100, 10)
 

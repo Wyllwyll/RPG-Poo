@@ -8,13 +8,13 @@ export class Dragon extends Enemy {
         this.flying = true;
     }
     attackfromsky(opponent: Character) {
-        opponent.setDamage(opponent.getHealth() - this.getStrength() * 1.1);
+        opponent.setDamage(opponent.getCurrentHealth() - this.getStrength() * 1.1);
     }
     setDamage(damage: number): void {
         if (this.flying) {
-            this.setHealth(this.getHealth() - damage * 0.4);
+            this.setHealth(this.getCurrentHealth() - damage * 0.4);
         } else {
-            this.setHealth(this.getHealth() - damage * 0.5);
+            this.setHealth(this.getCurrentHealth() - damage * 0.5);
         }
     }
 }

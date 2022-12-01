@@ -5,7 +5,7 @@ export class Golem extends Enemy {
     }
     setDamage(damage: number):void {
         if ((Math.random() * 100) <= 50) {
-            this.setHealth(this.getHealth() - damage);
+            this.setHealth(this.getCurrentHealth() - damage);
         }
     }
 }
