@@ -68,7 +68,7 @@ export class Character {
         }
     }
     setDamage(damage: number): void {
-        console.log("degat reçu",damage);
+        console.log("degat infligé",damage);
         this.setHealth(this.getCurrentHealth() - damage);
     }
     raiseXp(xp: number): void {

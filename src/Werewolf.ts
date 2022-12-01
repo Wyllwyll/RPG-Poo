@@ -4,6 +4,7 @@ export class Werewolf extends Enemy {
         super(name, health, strength);
     }
     setDamage(damage: number): void {
+        console.log("protection 50%: degat recus: ", damage*0.5);
         this.setHealth(this.getCurrentHealth() - damage * 0.5);
     }
 }

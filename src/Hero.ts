@@ -46,7 +46,7 @@ export class Hero extends Character {
         }
     }
     setDamage(damage: number): void {
-        console.log(this.getName()," le Dwarf recoit des degats");
+        console.log(this.getName()," recoit des degats");
         
         if (this.race == "Dwarf" && (Math.random() * 100) <= 20) {
             this.setHealth(this.getCurrentHealth() - damage / 2);
