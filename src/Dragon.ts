@@ -27,7 +27,7 @@ export class Dragon extends Enemy {
     fly(): void {
         this.flying = true;
     }
-    attackfromsky(opponent: Character):string {
+    attackfromsky(opponent: Character): string {
         this.flying = false;
         return opponent.setDamage(this.getStrength() * 1.1 * this.getLvl());
     }

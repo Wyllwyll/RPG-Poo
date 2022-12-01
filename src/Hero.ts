@@ -22,7 +22,6 @@ export class Hero extends Character {
                 }
             }
             case "Human": {
-                console.log("Human");
                 if (opponent.flying) {
                     return `avec Strengh * lvl et un malus de 10% => ${this.getStrength() * this.getLvl() * 0.9}, ${opponent.setDamage(this.getStrength() * 0.9 * this.getLvl())}`;
                 }
@@ -38,7 +37,7 @@ export class Hero extends Character {
     setDamage(damage: number): string {
         if (this.race == "Dwarf" && (Math.random() * 100) <= 20) {
             this.setHealth(this.getCurrentHealth() - damage / 2);
-            return `${this.getName} reçoit ${damage} de dégat -50% => ${damage/2}, sa health passe à ${this.getCurrentHealth}`;
+            return `${this.getName} reçoit ${damage} de dégat -50% => ${damage / 2}, sa health passe à ${this.getCurrentHealth}`;
         }
         else {
             this.setHealth(this.getCurrentHealth() - damage);

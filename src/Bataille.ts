@@ -12,7 +12,7 @@ export class Battle {
         this.opponent = opponent;
         this.round = 1;
     }
-    toDeath():void {
+    toDeath(): void {
         this.stat.push(`${this.hero.getRace()} vs ${this.opponent.constructor.name}`);
         while (this.hero.isAlive() && this.opponent.isAlive()) {
             if (this.round % 2 == 1) {
@@ -22,12 +22,12 @@ export class Battle {
             }
             this.round += 1;
         }
-        if(this.hero.isAlive()){
+        if (this.hero.isAlive()) {
             this.stat.push(`... bye bye ${this.opponent.getName()}`);
             this.stat.push("Le combat est fini");
             this.stat.push(this.hero.raiseXp(2));
             this.stat.push(`${this.hero.getName} récupere 10% de health de ${this.opponent.getName}, ${this.hero.regeneration(this.opponent.getHealth())}`);
-        }else{
+        } else {
             this.stat.push(`... bye bye ${this.hero.getName()}`);
             this.stat.push(`Le hero ${this.hero.getName()} est mort.`);
             this.stat.push("La partie est terminée");
