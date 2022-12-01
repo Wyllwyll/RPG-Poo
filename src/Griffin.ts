@@ -1,5 +1,5 @@
 import { Character } from "./Character";
-import { Enemy } from "./enemy";
+import { Enemy } from "./Enemy";
 
 export class griffin extends Enemy {
     private round:number;

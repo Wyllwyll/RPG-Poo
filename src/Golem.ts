@@ -1,4 +1,4 @@
-import { Enemy } from "./enemy";
+import { Enemy } from "./Enemy";
 export class Golem extends Enemy {
     constructor(name: string, health: number, strength: number) {
         super(name, health, strength)

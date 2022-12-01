@@ -31,7 +31,7 @@ export class Battle {
             return this.opponent.die()
         }
         else {
-            return this.opponent.die()
+            return this.opponent.die()*/
 
     }
 
