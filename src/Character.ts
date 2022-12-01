@@ -52,8 +52,8 @@ export class Character {
         opponent.setDamage(this.getStrength() * this.getLvl());
         return this.name + " attaque " + opponent.name + " avec Strengh * lvl=> " + this.getStrength() * this.getLvl()
     }
-    die(opponent: Character): string {
-        return "bye bye " + this.name;
+    die(): string {
+        return "bye bye " + this.getName;
     }
 
     isAlive(): boolean {
