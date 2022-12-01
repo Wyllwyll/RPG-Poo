@@ -1,5 +1,5 @@
 
-import { Enemy } from "./Enemy";
+import { Enemy } from "./enemy";
 import { Hero } from "./Hero";
 
 export class Battle {
@@ -12,6 +12,9 @@ export class Battle {
         this.opponent = opponent
         this.round = 1
     }
+       
+
+      
     toDeath():void {
         while (this.hero.isAlive() && this.opponent.isAlive()) {
             console.log("round=", this.round);
@@ -29,10 +32,14 @@ export class Battle {
         }
         else {
             return this.opponent.die()
-        } */
-
 
     }
+
+  
+
+  
+   
+    
 
 
 }

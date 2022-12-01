@@ -1,5 +1,5 @@
 import { Character } from "./Character";
-import { Enemy } from "./Enemy";
+import { Enemy } from "./enemy";
 export class Dragon extends Enemy {
     constructor(name: string, health: number, strength: number) {
         super(name, health, strength);
