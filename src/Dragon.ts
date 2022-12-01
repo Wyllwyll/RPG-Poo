@@ -1,8 +1,30 @@
 import { Character } from "./Character";
 import { Enemy } from "./Enemy";
 export class Dragon extends Enemy {
+    round:number;
     constructor(name: string, health: number, strength: number) {
         super(name, health, strength);
+        this.round = 0;
+    }
+    attack(opponent: Character): string {
+        switch(this.round){
+            case 0 :{
+                super.attack(opponent);
+                this.round+=1;
+                break;
+            }
+            case 1 :{
+                this.fly();
+                this.round+=1;
+                break;
+            }
+            case 2 :{
+                this.attackfromsky(opponent);
+                this.round=0;
+                break;
+            }
+        }
+        return
     }
     fly(): void {
         console.log(this.getName()," s'envole");
