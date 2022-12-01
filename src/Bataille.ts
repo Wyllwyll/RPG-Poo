@@ -17,18 +17,23 @@ export class Battle {
 
     toDeath() {
         while (this.hero.isAlive() && this.opponent.isAlive()) {
-            console.log("round=",this.round);
+            console.log("round=", this.round);
 
-            console.log("So: ", this.hero.getCurrentHealth(), "VS ", "Croissant ", this.opponent.getCurrentHealth());
-            if (this.round % 2 == 0) {
-                console.log("lautre",this.hero.attack(this.opponent))
+            console.log("So: ", this.hero.getCurrentHealth(), "VS ", "Croissant: ", this.opponent.getCurrentHealth());
+            if (this.round % 2 == 1) {
+                console.log("lautre:", this.hero.attack(this.opponent))
             } else {
-                console.log("ça?",this.opponent.attack(this.hero))
+                console.log("ça?:", this.opponent.attack(this.hero))
             }
             this.round += 1
+
         }
-
-
+        if (this.hero.isAlive()) {
+            return this.opponent.die()
+        }
+        else {
+            return this.opponent.die()
+        }
 
 
     }

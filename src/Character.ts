@@ -49,11 +49,10 @@ export class Character {
         this.xp = xp
     }
     attack(opponent: Character): string {
-        opponent.setHealth(opponent.getCurrentHealth() - this.getStrength());
+        opponent.setDamage(this.getStrength() * this.getLvl());
         return this.name + " attaque " + opponent.name + " avec Strengh * lvl=> " + this.getStrength() * this.getLvl()
     }
     die(opponent: Character): string {
-        opponent.raiseXp(2);
         return "bye bye " + this.name;
     }
 
