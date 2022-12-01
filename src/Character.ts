@@ -49,31 +49,43 @@ export class Character {
         this.xp = xp
     }
     attack(opponent: Character): string {
-        opponent.setDamage(this.getStrength() * this.getLvl());
-        return this.name + " attaque " + opponent.name + " avec Strengh * lvl=> " + this.getStrength() * this.getLvl()
+        opponent.setDamage(this.getStrength()*this.getLvl());
+        return `${this.getName()} attaque ${opponent.getName()} avec Strengh * lvl=> ${this.getStrength() * this.getLvl()}`;
     }
     die(): string {
-        return "bye bye " + this.getName;
+        return "bye bye " + this.getName();
     }
-
     isAlive(): boolean {
         if (this.getCurrentHealth() <= 0) {
+            console.log(this.getName(),"en mort");
+            
             return false
         }
         else {
+            console.log(this.getName()," encore vivant");
+            
             return true
         }
     }
-
     setDamage(damage: number): void {
+        console.log("degat infligé",damage);
         this.setHealth(this.getCurrentHealth() - damage);
     }
     raiseXp(xp: number): void {
+        console.log("gain d'experience :",xp);
+        
         if ((this.getXp() + xp) >= 10) {
+            console.log("gain de niveau !!");
+            
             this.setXp(this.getXp() + xp - 10);
             this.setLvl(this.getLvl() + 1);
+            console.log("nouveau niveau :",this.getLvl());
+            
+
         } else {
             this.setXp(this.getXp() + xp);
+            console.log("experience actuelle :",this.getXp());
+            
         }
     }
 }

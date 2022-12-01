@@ -7,33 +7,29 @@ export class Battle {
     opponent: Enemy
     round: number
     stat: []
-
-
     constructor(hero: Hero, opponent: Enemy) {
         this.hero = hero
         this.opponent = opponent
         this.round = 1
     }
-
-    toDeath() {
+    toDeath():void {
         while (this.hero.isAlive() && this.opponent.isAlive()) {
             console.log("round=", this.round);
-
-            console.log("So: ", this.hero.getCurrentHealth(), "VS ", "Croissant: ", this.opponent.getCurrentHealth());
+            console.log(`${this.hero.getName()} ${this.hero.getCurrentHealth()} VS ${this.opponent.getName()} :${this.opponent.getCurrentHealth()}`);
             if (this.round % 2 == 1) {
-                console.log("lautre:", this.hero.attack(this.opponent))
+                console.log(this.hero.getName()," attack :", this.hero.attack(this.opponent));
             } else {
-                console.log("ça?:", this.opponent.attack(this.hero))
+                console.log(this.opponent.getName()," attack :", this.opponent.attack(this.hero));
             }
             this.round += 1
 
         }
-        if (this.hero.isAlive()) {
+/*        if (this.hero.isAlive()) {
             return this.opponent.die()
         }
         else {
             return this.opponent.die()
-        }
+        } */
 
 
     }

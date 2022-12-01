@@ -4,6 +4,7 @@ export class Berserker extends Enemy {
         super(name, health, strength);
     }
     setDamage(damage: number): void {
+        console.log("protection 30%: degat recus: ", damage*0.7);
         this.setHealth(this.getCurrentHealth() - damage * 0.7);
     }
 }
