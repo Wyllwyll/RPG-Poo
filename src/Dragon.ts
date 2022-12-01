@@ -1,49 +1,43 @@
 import { Character } from "./Character";
 import { Enemy } from "./Enemy";
 export class Dragon extends Enemy {
-    round:number;
+    round: number;
     constructor(name: string, health: number, strength: number) {
         super(name, health, strength);
         this.round = 0;
     }
     attack(opponent: Character): string {
-        switch(this.round){
-            case 0 :{
-                super.attack(opponent);
-                this.round+=1;
-                break;
+        switch (this.round) {
+            case 0: {
+                this.round += 1;
+                return super.attack(opponent);
             }
-            case 1 :{
+            case 1: {
                 this.fly();
-                this.round+=1;
-                break;
+                this.round += 1;
+                return `s'envole`;
             }
-            case 2 :{
-                this.attackfromsky(opponent);
-                this.round=0;
-                break;
+            case 2: {
+                ;
+                this.round = 0;
+                return `attaque avec Strengh * lvl et un bonus de 10% => ${this.getStrength() * this.getLvl() * 1.1}, ${this.attackfromsky(opponent)}`;
             }
         }
-        return
     }
     fly(): void {
-        console.log(this.getName()," s'envole");
         this.flying = true;
     }
-    attackfromsky(opponent: Character) {
-        console.log("attaque aerienne de Dragon bonus 10%")
-        opponent.setDamage(this.getStrength() * 1.1 * this.getLvl());
+    attackfromsky(opponent: Character):string {
         this.flying = false;
-        console.log(this.getName()," ,le Dragon atterrit");
+        return opponent.setDamage(this.getStrength() * 1.1 * this.getLvl());
     }
-    setDamage(damage: number): void {
+    setDamage(damage: number): string {
         if (this.flying) {
-            console.log("Dragon en vole, resistance totale de 60% : degat ",damage*0.4);
-            
             this.setHealth(this.getCurrentHealth() - damage * 0.4);
+            return `${this.getName} reçoit ${damage} de dégat -60% de resistance => ${damage * 0.4}, sa health passe à ${this.getCurrentHealth}`;
         } else {
-            console.log("Dragon au sol, resistance de 50% : degat ",damage*0.5);
             this.setHealth(this.getCurrentHealth() - damage * 0.5);
+            return `${this.getName} reçoit ${damage} de dégat -50% de resistance => ${damage * 0.5}, sa health passe à ${this.getCurrentHealth}`;
         }
     }
 }

@@ -1,7 +1,7 @@
 export class Character {
     private name: string;
     private health: number;
-    private currentHealth: number
+    private currentHealth: number;
     private strength: number;
     private lvl: number;
     private xp: number;
@@ -19,7 +19,7 @@ export class Character {
         return this.name;
     }
     setName(name: string): void {
-        this.name = name
+        this.name = name;
     }
     getHealth(): number {
         return this.health;
@@ -37,54 +37,54 @@ export class Character {
         this.strength = strength;
     }
     getLvl(): number {
-        return this.lvl
+        return this.lvl;
     }
     setLvl(lvl: number): void {
-        this.lvl = lvl
+        this.lvl = lvl;
     }
     getXp(): number {
-        return this.xp
+        return this.xp;
     }
     setXp(xp: number): void {
-        this.xp = xp
+        this.xp = xp;
     }
     attack(opponent: Character): string {
-        opponent.setDamage(this.getStrength()*this.getLvl());
-        return `${this.getName()} attaque ${opponent.getName()} avec Strengh * lvl=> ${this.getStrength() * this.getLvl()}`;
+        let returnDamage = opponent.setDamage(this.getStrength()*this.getLvl());
+        return `attaque avec Strengh * lvl=> ${this.getStrength() * this.getLvl()}. ${returnDamage}`;
     }
     die(): string {
-        return "bye bye " + this.getName();
+        return `... bye bye ${this.getName()}`;
     }
     isAlive(): boolean {
         if (this.getCurrentHealth() <= 0) {
-            console.log(this.getName(),"est mort");
-            
-            return false
+            return false;
         }
         else {
-            console.log(this.getName()," encore vivant");
-            
-            return true
+            return true;
         }
     }
-    setDamage(damage: number): void {
-        console.log("degat reçu",damage);
+    setDamage(damage: number): string {
         this.setHealth(this.getCurrentHealth() - damage);
+        return `${this.getName} reçoit ${damage} de dégat, sa health passe à ${this.getCurrentHealth}`;
     }
-    raiseXp(xp: number): void {
-        console.log("gain d'experience :",xp);
-        
+    raiseXp(xp: number): string {
+        let returnXp:string;
         if ((this.getXp() + xp) >= 10) {
-            console.log("gain de niveau !!");
-            
             this.setXp(this.getXp() + xp - 10);
             this.setLvl(this.getLvl() + 1);
-            console.log("nouveau niveau :",this.getLvl());
-
+            returnXp= `${this.getName()} gagne un Level : Lvl ${this.getLvl}`;
         } else {
             this.setXp(this.getXp() + xp);
-            console.log("experience actuelle :",this.getXp());
-            
+            returnXp= `l'XP de ${this.getName()} augmente de ${xp}`;
         }
+        return returnXp;
+    }
+    regeneration(health:number):string{
+        this.setHealth(this.getCurrentHealth()+(0.1*health));
+        if (this.getCurrentHealth() > this.getHealth()){
+            this.setHealth(this.getHealth());
+            return `et revient à son maximun ${this.getHealth()}`;
+        }
+        return `${health}/100*10 = ${0.1*health}`;
     }
 }
