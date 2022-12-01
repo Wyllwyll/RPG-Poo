@@ -80,11 +80,11 @@ export class Character {
         return returnXp;
     }
     regeneration(health: number): string {
-        this.setHealth(this.getCurrentHealth() + (0.1 * health));
+        this.setHealth(this.getCurrentHealth() + Math.round(0.1 * health));
         if (this.getCurrentHealth() > this.getHealth()) {
             this.setHealth(this.getHealth());
             return `et revient à son maximun ${this.getHealth()}`;
         }
-        return `${health}/100*10 = ${0.1 * health}`;
+        return `${health}/100*10 = ${Math.round(0.1 * health)}`;
     }
 }

@@ -4,7 +4,7 @@ export class Berserker extends Enemy {
         super(name, health, strength);
     }
     setDamage(damage: number): string {
-        this.setHealth(this.getCurrentHealth() - damage * 0.7);
-        return `${this.getName} reçoit ${damage} de dégat -30% => ${damage * 0.7}, sa health passe à ${this.getCurrentHealth}`;
+        this.setHealth(Math.round(this.getCurrentHealth() - damage * 0.7));
+        return `${this.getName} reçoit ${damage} de dégat -30% => ${Math.round(damage * 0.7)}, sa health passe à ${this.getCurrentHealth}`;
     }
 }

@@ -29,11 +29,11 @@ export class griffin extends Enemy {
     }
     attackfromsky(opponent: Character): string {
         this.flying = false;
-        return opponent.setDamage(this.getStrength() * 1.1 * this.getLvl());
+        return opponent.setDamage(Math.round(this.getStrength() * 1.1 * this.getLvl()));
     }
     setDamage(damage: number): string {
         if (this.flying) {
-            this.setHealth(this.getCurrentHealth() - damage * 0.9);
+            this.setHealth(Math.round(this.getCurrentHealth() - damage * 0.9));
             return `${this.getName} reçoit ${damage} de dégat -10% de resistance => ${damage * 0.9}, sa health passe à ${this.getCurrentHealth}`;
         } else {
             this.setHealth(this.getCurrentHealth() - damage);

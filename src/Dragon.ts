@@ -20,7 +20,7 @@ export class Dragon extends Enemy {
             case 2: {
                 ;
                 this.round = 0;
-                return `attaque avec Strengh * lvl et un bonus de 10% => ${this.getStrength() * this.getLvl() * 1.1}, ${this.attackfromsky(opponent)}`;
+                return `attaque avec Strengh * lvl et un bonus de 10% => ${Math.round(this.getStrength() * this.getLvl() * 1.1)}, ${this.attackfromsky(opponent)}`;
             }
         }
     }
@@ -29,14 +29,14 @@ export class Dragon extends Enemy {
     }
     attackfromsky(opponent: Character): string {
         this.flying = false;
-        return opponent.setDamage(this.getStrength() * 1.1 * this.getLvl());
+        return opponent.setDamage(Math.round(this.getStrength() * 1.1 * this.getLvl()));
     }
     setDamage(damage: number): string {
         if (this.flying) {
-            this.setHealth(this.getCurrentHealth() - damage * 0.4);
+            this.setHealth(Math.round(this.getCurrentHealth() - damage * 0.4));
             return `${this.getName} reçoit ${damage} de dégat -60% de resistance => ${damage * 0.4}, sa health passe à ${this.getCurrentHealth}`;
         } else {
-            this.setHealth(this.getCurrentHealth() - damage * 0.5);
+            this.setHealth(Math.round(this.getCurrentHealth() - damage * 0.5));
             return `${this.getName} reçoit ${damage} de dégat -50% de resistance => ${damage * 0.5}, sa health passe à ${this.getCurrentHealth}`;
         }
     }
