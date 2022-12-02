@@ -27,6 +27,7 @@ export class Battle {
                 this.stat.push(`Tour ${this.round}: ${this.opponent.getName()} ${this.opponent.attack(this.hero)}`);
             }
             this.round += 1;
+                        
         }
         if (this.hero.isAlive()) {
             this.stat.push(`... bye bye ${this.opponent.getName()}`);
