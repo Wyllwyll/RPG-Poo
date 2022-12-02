@@ -48,8 +48,7 @@ let enemyPlayer:any []=[]
 
 
 
-const batailleSimplon = new Battle(humain, drake)
 
 
-batailleSimplon.toDeath()
-console.log(batailleSimplon.stat);
+
+
