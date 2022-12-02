@@ -1,5 +1,12 @@
+//const valid = document.getElementById('valid')
+//const random = document.getElementById('random')
+//const stat =document.getElementById('stat')
 
-import { Enemy } from "./enemy";
+//valid.addEventListener('click',choix);
+//random.addEventListener('click',random);
+
+
+import { Enemy } from "./Enemy";
 import { Hero } from "./Hero";
 
 export class Battle {
@@ -33,8 +40,16 @@ export class Battle {
         else {
             return this.opponent.die()*/
 
+
+           
+    }
+    random1():void{
+        Math.floor(Math.random()*10);
+        console.log(this.random1); 
     }
 
+
+  
   
 
   
