@@ -12,49 +12,43 @@ export class Hero extends Character {
         this.race = race;
     }
     attack(opponent: Character): string {
-        console.log(this.getName()," de race:");
-        
+        let damage:number
         switch (this.race) {
             case "Elf": {
-                console.log("Elf");
                 
                 if (opponent.flying) {
-                    opponent.setDamage(this.getStrength() * 1.10*this.getLvl());
-                    return `${this.getName()} attaque ${opponent.getName()} avec Strengh * lvl et un bonus de 10% => ${this.getStrength() * this.getLvl() * 1.1}`
+                    damage=Math.round(this.getStrength() * this.getLvl() * 1.1);
+                    return `avec Strengh * lvl et un bonus de 10% => ${damage}, ${opponent.setDamage(damage)}`;
                 }
                 else {
-                    opponent.setDamage(this.getStrength() * 0.9*this.getLvl());
-                    return this.getName() + " attaque " + opponent.getName() + " avec Strengh * lvl=> " + this.getStrength() * this.getLvl()
+                    damage=Math.round(this.getStrength() * this.getLvl() * 0.9);
+                    return `avec Strengh * lvl et un malus de 10% => ${damage}, ${opponent.setDamage(damage)}`;
                 }
             }
             case "Human": {
-                console.log("Human");
                 if (opponent.flying) {
-                    opponent.setDamage(this.getStrength() * 0.9*this.getLvl());
-                    return this.getName() + " attaque " + opponent.getName() + " avec Strengh * lvl=> " + this.getStrength() * this.getLvl()
+                    damage=Math.round(this.getStrength() * this.getLvl() * 0.9);
+                    return `avec Strengh * lvl et un malus de 10% => ${damage}, ${opponent.setDamage(damage)}`;
                 }
                 else {
-                    opponent.setDamage(this.getStrength() * 1.10*this.getLvl());
-                    return this.getName() + " attaque " + opponent.getName() + " avec Strengh * lvl=> " + this.getStrength() * this.getLvl()
+                    damage=Math.round(this.getStrength() * this.getLvl() * 1.1);
+                    return `avec Strengh * lvl et un bonus de 10% => ${damage}, ${opponent.setDamage(damage)}`;
                 }
             }
             case "Dwarf": {
-                console.log("Dwarf");
-                opponent.setDamage(this.getStrength()*this.getLvl());
-                return this.getName() + " attaque " + opponent.getName() + " avec Strengh * lvl=> " + this.getStrength() * this.getLvl()
+                damage=this.getStrength() * this.getLvl()
+                return `avec Strengh * lvl=> ${damage}, ${opponent.setDamage(damage)}`;
             }
         }
     }
-    setDamage(damage: number): void {
-        console.log(this.getName()," recoit des degats");
-        
+    setDamage(damage: number): string {
         if (this.race == "Dwarf" && (Math.random() * 100) <= 20) {
-            this.setHealth(this.getCurrentHealth() - damage / 2);
-            console.log(" reduit de 50% :", damage / 2);
+            this.setHealth(this.getCurrentHealth() - Math.round(damage / 2));
+            return `${this.getName} reçoit ${damage} de dégat -50% => ${Math.round(damage / 2)}, sa health passe à ${this.getCurrentHealth}`;
         }
         else {
             this.setHealth(this.getCurrentHealth() - damage);
-            console.log(" de :", damage);
+            return `${this.getName} reçoit ${damage} de dégat, sa health passe à ${this.getCurrentHealth}`;
         }
     }
 }
