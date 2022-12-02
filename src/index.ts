@@ -8,7 +8,6 @@ import { Enemy } from "./Enemy"
 import { Golem } from "./Golem"
 import { griffin } from "./Griffin"
 import { Hero } from "./Hero"
-import { cLog } from "./log"
 import { Werewolf } from "./Werewolf"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -24,10 +23,6 @@ const clickName = document.getElementById('button-addon2');
 const subMit = document.getElementById('submit');
 
 arrayHero.push("Elf", "Human", "Dwarf")
-
-console.log("tesssst");
-
-cLog("test","bob")
 
 subName.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -60,12 +55,8 @@ selectHero.addEventListener("change", function (e) {
 
         case 'Dwarf': race = new Hero(`${nameChoice}`, 100, 20, "Dwarf");
     }
-    console.log(race);
-
 });
 
-
-console.log(heroPlayer);
 
 
 function pushHero(): void {
@@ -89,8 +80,6 @@ selectEnemies.addEventListener("change", function (e) {
     console.log(e);
     const who = (e.target as HTMLInputElement).value
     enemyPlayer.push(who)
-    console.log(enemyPlayer);
-
 })
 
 selectEnemies.addEventListener('change', (e) => {
@@ -153,3 +142,9 @@ fight.addEventListener("click", () => {
 })
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+function affichage (hero:Hero,opponent:Enemy){
+
+
+}

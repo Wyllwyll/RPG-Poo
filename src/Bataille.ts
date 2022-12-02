@@ -8,12 +8,11 @@
 
 import { Enemy } from "./Enemy";
 import { Hero } from "./Hero";
-import { cLog } from "./log";
 
 export class Battle {
     hero: Hero;
     opponent: Enemy;
-    round: number = 1;
+    round: number = 1;$$$$$$$$$$$$$$
     stat: string[] = [];
     constructor(hero: Hero, opponent: Enemy) {
         this.hero = hero;
@@ -29,6 +28,7 @@ export class Battle {
             }
             this.round += 1;
 
+
         }
         if (this.hero.isAlive()) {
             this.stat.push(`... bye bye ${this.opponent.getName()}`);
@@ -40,10 +40,8 @@ export class Battle {
             this.stat.push(`Le hero ${this.hero.getName()} est mort.`);
             this.stat.push("La partie est terminée");
         }
-
-
-
-
+        console.log(this.stat);
+        
     }
     random1(): void {
         Math.floor(Math.random() * 10);
