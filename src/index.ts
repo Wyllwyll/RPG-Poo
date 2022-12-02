@@ -75,18 +75,6 @@ function pushHero(): void {
 pushHero()
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-/* 
-const drake = new Dragon("TestDragon", 200, 30)
-const gol = new Golem("testGolem", 150, 20)
-const ass = new Assassin("testAssassin", 100, 15)
-const bers = new Berserker("testBerserker", 110, 20)
-const grif = new griffin("testGriffon", 170, 25)
-const loup = new Werewolf("testWerewolf", 170, 20) */
-
-
-
-
 const arrayEnemies: any[] = []
 const selectEnemies = document.getElementById("selectEnemies")
 let enemy: Enemy
@@ -123,6 +111,8 @@ selectEnemies.addEventListener('change', (e) => {
             break;
 
         case 'Griffin': enemy = new griffin('Griffon en mousse', 120, 20);
+
+            break;
 
         case "Werewolf": enemy = new Werewolf("Loup perdu", 150, 25)
 
