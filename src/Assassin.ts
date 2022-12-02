@@ -12,6 +12,6 @@ export class Assassin extends Enemy {
         let damage = Math.round(this.getStrength() * this.getLvl() * (Math.pow(1.1, this.round)));
         let returnDamage = opponent.setDamage(damage);
         this.round += 1;
-        return `attaque avec Strengh * lvl et bonus de niveau ${this.round} => ${damage}, sa health passe à ${this.getCurrentHealth}. ${returnDamage}`;
+        return `attaque avec Strengh * lvl et bonus de niveau ${this.round} => ${damage}, sa health passe à ${this.getCurrentHealth()}. ${returnDamage}`;
     }
 }

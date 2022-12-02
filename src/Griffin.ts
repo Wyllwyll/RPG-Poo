@@ -34,10 +34,10 @@ export class griffin extends Enemy {
     setDamage(damage: number): string {
         if (this.flying) {
             this.setHealth(Math.round(this.getCurrentHealth() - damage * 0.9));
-            return `${this.getName} reçoit ${damage} de dégat -10% de resistance => ${damage * 0.9}, sa health passe à ${this.getCurrentHealth}`;
+            return `${this.getName()} reçoit ${damage} de dégat -10% de resistance => ${damage * 0.9}, sa health passe à ${this.getCurrentHealth()}`;
         } else {
             this.setHealth(this.getCurrentHealth() - damage);
-            return `${this.getName} reçoit ${damage} de dégat, sa health passe à ${this.getCurrentHealth}`;
+            return `${this.getName()} reçoit ${damage} de dégat, sa health passe à ${this.getCurrentHealth()}`;
         }
     }
 }

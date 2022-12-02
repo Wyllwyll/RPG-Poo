@@ -9,11 +9,12 @@ import { Hero } from "./Hero"
 import { Werewolf } from "./Werewolf"
 
 
-const So = new Hero("So", 100, 15, "Elf")
+const So = new Hero("So", 150, 20, "Dwarf")
 
-const croissant = new Dragon("croissant", 200, 30)
+const croissant = new Dragon("croissant", 100, 5)
 
 const batailleSimplon = new Battle(So,croissant)
 
 
 batailleSimplon.toDeath()
+console.log(batailleSimplon.stat);

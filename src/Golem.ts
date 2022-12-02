@@ -6,9 +6,9 @@ export class Golem extends Enemy {
     setDamage(damage: number): string {
         if ((Math.random() * 100) <= 50) {
             this.setHealth(this.getCurrentHealth() - damage);
-            return `${this.getName} reçoit ${damage} de dégat, sa health passe à ${this.getCurrentHealth}`;
+            return `${this.getName()} reçoit ${damage} de dégat, sa health passe à ${this.getCurrentHealth()}`;
         } else {
-            return `${this.getName} reçoit ${damage} de dégat mais annule les dégats, sa health reste ${this.getCurrentHealth}`;
+            return `${this.getName()} reçoit ${damage} de dégat mais annule les dégats, sa health reste ${this.getCurrentHealth()}`;
         }
     }
 }

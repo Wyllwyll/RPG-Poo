@@ -33,11 +33,11 @@ export class Dragon extends Enemy {
     }
     setDamage(damage: number): string {
         if (this.flying) {
-            this.setHealth(Math.round(this.getCurrentHealth() - damage * 0.4));
-            return `${this.getName} reçoit ${damage} de dégat -60% de resistance => ${damage * 0.4}, sa health passe à ${this.getCurrentHealth}`;
+            this.setHealth(Math.round(this.getCurrentHealth() - Math.round(damage * 0.4)));
+            return `${this.getName()} reçoit ${damage} de dégat -60% de resistance => ${Math.round(damage * 0.4)}, sa health passe à ${this.getCurrentHealth()}`;
         } else {
-            this.setHealth(Math.round(this.getCurrentHealth() - damage * 0.5));
-            return `${this.getName} reçoit ${damage} de dégat -50% de resistance => ${damage * 0.5}, sa health passe à ${this.getCurrentHealth}`;
+            this.setHealth(Math.round(this.getCurrentHealth() - Math.round(damage * 0.5)));
+            return `${this.getName()} reçoit ${damage} de dégat -50% de resistance => ${Math.round(damage * 0.5)}, sa health passe à ${this.getCurrentHealth()}`;
         }
     }
 }
