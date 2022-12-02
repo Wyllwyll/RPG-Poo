@@ -12,12 +12,11 @@ import { Hero } from "./Hero";
 export class Battle {
     hero: Hero;
     opponent: Enemy;
-    round: number;
-    stat: string[];
+    round: number = 1;
+    stat: string[] = [];
     constructor(hero: Hero, opponent: Enemy) {
         this.hero = hero;
         this.opponent = opponent;
-        this.round = 1;
     }
     toDeath(): void {
         this.stat.push(`${this.hero.getRace()} vs ${this.opponent.constructor.name}`);
@@ -33,7 +32,7 @@ export class Battle {
             this.stat.push(`... bye bye ${this.opponent.getName()}`);
             this.stat.push("Le combat est fini");
             this.stat.push(this.hero.raiseXp(2));
-            this.stat.push(`${this.hero.getName} récupere 10% de health de ${this.opponent.getName}, ${this.hero.regeneration(this.opponent.getHealth())}`);
+            this.stat.push(`${this.hero.getName()} récupere 10% de health de ${this.opponent.getName()}, ${this.hero.regeneration(this.opponent.getHealth())}`);
         } else {
             this.stat.push(`... bye bye ${this.hero.getName()}`);
             this.stat.push(`Le hero ${this.hero.getName()} est mort.`);

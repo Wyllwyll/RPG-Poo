@@ -11,7 +11,6 @@ import { Werewolf } from "./Werewolf"
 
 
 
-
 const humain = new Hero("humainTest", 100, 15, "Human")
 const elf = new Hero("elfTest", 100, 15, "Elf")
 const nain = new Hero("testDwarf", 90, 15, "Dwarf")
@@ -53,3 +52,4 @@ const batailleSimplon = new Battle(humain, drake)
 
 
 batailleSimplon.toDeath()
+console.log(batailleSimplon.stat);

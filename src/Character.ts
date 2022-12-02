@@ -65,14 +65,14 @@ export class Character {
     }
     setDamage(damage: number): string {
         this.setHealth(this.getCurrentHealth() - damage);
-        return `${this.getName} reçoit ${damage} de dégat, sa health passe à ${this.getCurrentHealth}`;
+        return `${this.getName()} reçoit ${damage} de dégat, sa health passe à ${this.getCurrentHealth()}`;
     }
     raiseXp(xp: number): string {
         let returnXp: string;
         if ((this.getXp() + xp) >= 10) {
             this.setXp(this.getXp() + xp - 10);
             this.setLvl(this.getLvl() + 1);
-            returnXp = `${this.getName()} gagne un Level : Lvl ${this.getLvl}`;
+            returnXp = `${this.getName()} gagne un Level : Lvl ${this.getLvl()}`;
         } else {
             this.setXp(this.getXp() + xp);
             returnXp = `l'XP de ${this.getName()} augmente de ${xp}`;
