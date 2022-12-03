@@ -134,17 +134,22 @@ pushEnemy();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const fight = document.getElementById("fight")
+let content: string = "";
 
 fight.addEventListener("click", () => {
 
     let bataille = new Battle(race, enemy)
     bataille.toDeath();
+    for (let i = 0; i < bataille.stat.length; i++) {
+        content += bataille.stat[i];
+    }
+    document.getElementById("tablestat").innerHTML = content;
 })
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-function affichage (hero:Hero,opponent:Enemy){
+function affichage(hero: Hero, opponent: Enemy) {
 
 
 }
