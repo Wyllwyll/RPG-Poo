@@ -6,6 +6,7 @@ export class griffin extends Enemy {
     constructor(name: string, health: number, strength: number) {
         super(name, health, strength);
         this.round = 0;
+        this.race="Griffon";
     }
     attack(opponent: Character): string {
         switch (this.round) {

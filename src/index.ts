@@ -38,7 +38,7 @@ clickName.addEventListener('click', (e) => {
     console.log(nameChoice);
     clickName.classList.add('disabled');
     subMit.setAttribute('readonly', '');
-})
+}) 
 
 
 selectHero.addEventListener("change", function (e) {
@@ -134,22 +134,27 @@ pushEnemy();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const fight = document.getElementById("fight")
-let content: string = "";
+
+const conteneurStat = document.getElementById("stat");
 
 fight.addEventListener("click", () => {
 
-    let bataille = new Battle(race, enemy)
+    let bataille = new Battle(race, enemy);
+
     bataille.toDeath();
+
     for (let i = 0; i < bataille.stat.length; i++) {
-        content += bataille.stat[i];
+        let ligne = document.createElement("tr");
+        for (let j = 0; j < 6; j++) {
+            let colonne = document.createElement("td");
+            colonne.innerHTML = bataille.formatedStat[i][j];
+            ligne.appendChild(colonne);
+        }
+        conteneurStat.appendChild(ligne);
     }
-    document.getElementById("tablestat").innerHTML = content;
+    
 })
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-function affichage(hero: Hero, opponent: Enemy) {
-
-
-}

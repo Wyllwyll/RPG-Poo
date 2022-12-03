@@ -2,6 +2,7 @@ import { Enemy } from "./Enemy";
 export class Berserker extends Enemy {
     constructor(name: string, health: number, strength: number) {
         super(name, health, strength);
+        this.race="Berserker";
     }
     setDamage(damage: number): string {
         this.setHealth(Math.round(this.getCurrentHealth() - damage * 0.7));

@@ -2,6 +2,7 @@ import { Enemy } from "./Enemy";
 export class Werewolf extends Enemy {
     constructor(name: string, health: number, strength: number) {
         super(name, health, strength);
+        this.race="Werewolf";
     }
     setDamage(damage: number): string {
         this.setHealth(this.getCurrentHealth() - Math.round(damage * 0.5));

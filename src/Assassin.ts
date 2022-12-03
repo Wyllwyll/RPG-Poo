@@ -7,6 +7,7 @@ export class Assassin extends Enemy {
     constructor(name: string, health: number, strength: number) {
         super(name, health, strength);
         this.round = 0;
+        this.race="Assassin";
     }
     attack(opponent: Character): string {
         let damage = Math.round(this.getStrength() * this.getLvl() * (Math.pow(1.1, this.round)));
