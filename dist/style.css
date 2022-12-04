@@ -2,14 +2,18 @@
     background-image: url(./img/battleback1.png);
     margin: 5%;
     width: 90%;
+    min-height: 40em;
     z-index: 0;
+    background-size: cover;
 } 
 #hero {
-    z-index: index 1; ;
+    z-index: index 1; 
+    max-width: 30%;
 
 }
 #enemie{
     z-index: index 3;
+    max-width: 30%;
 }
 #vs{
     z-index: inxe 2;

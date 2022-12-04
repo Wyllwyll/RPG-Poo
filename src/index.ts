@@ -99,7 +99,7 @@ selectEnemies.addEventListener('change', (e) => {
         enemie.setAttribute("class","col");
             break;
         case 'Berserker': enemy = new Berserker('Sacrieur', 110, 20);
-        enemie.setAttribute("src","./img/berseker-removebg-preview.pngg");
+        enemie.setAttribute("src","./img/berseker-removebg-preview.png");
         hero.setAttribute("class","col");
             break;
 
