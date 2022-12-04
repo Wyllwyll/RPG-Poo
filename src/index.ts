@@ -147,7 +147,7 @@ fight.addEventListener("click", () => {
         let ligne = document.createElement("tr");
         for (let j = 0; j < 6; j++) {
             let colonne = document.createElement("td");
-            colonne.textContent = bataille.formatedStat[i][j];
+            colonne.textContent = bataille?.formatedStat[i]?.[j];
             ligne.appendChild(colonne);
         }
         conteneurStat.appendChild(ligne);
