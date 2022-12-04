@@ -1,5 +1,6 @@
 
 
+import { textSpanContainsPosition } from "typescript"
 import { Assassin } from "./Assassin"
 import { Battle } from "./Bataille"
 import { Berserker } from "./Berserker"
@@ -23,13 +24,13 @@ const clickName = document.getElementById('button-addon2');
 const subMit = document.getElementById('submit');
 const hero = document.getElementById("hero")
 const enemie = document.getElementById("enemie")
+const result = document.getElementById("result")
 
 arrayHero.push("Elf", "Human", "Dwarf")
 
 subName.addEventListener('submit', (e) => {
     e.preventDefault();
     nameChoice = e.target[0].value;
-    console.log(nameChoice);
     clickName.classList.add('disabled');
     subMit.setAttribute('readonly', '');
 
@@ -37,14 +38,12 @@ subName.addEventListener('submit', (e) => {
 
 clickName.addEventListener('click', (e) => {
     nameChoice = (e.target as HTMLInputElement).offsetParent[0].value;
-    console.log(nameChoice);
     clickName.classList.add('disabled');
     subMit.setAttribute('readonly', '');
 }) 
 
 
 selectHero.addEventListener("change", function (e) {
-    console.log(e);
     const who = (e.target as HTMLInputElement).value;
     playerRace.push(who);
     switch (who) {
@@ -86,7 +85,6 @@ let enemyPlayer: any[] = []
 arrayEnemies.push("Dragon", "Berserker", "Golem", "Assassin", "Griffin", "Werewolf")
 
 selectEnemies.addEventListener("change", function (e) {
-    console.log(e);
     const who = (e.target as HTMLInputElement).value
     enemyPlayer.push(who)
 })
@@ -101,7 +99,7 @@ selectEnemies.addEventListener('change', (e) => {
         enemie.setAttribute("class","col");
             break;
         case 'Berserker': enemy = new Berserker('Sacrieur', 110, 20);
-        enemie.setAttribute("src","./img/berserker-removebg-preview.png");
+        enemie.setAttribute("src","./img/berseker-removebg-preview.pngg");
         hero.setAttribute("class","col");
             break;
 
@@ -125,7 +123,7 @@ selectEnemies.addEventListener('change', (e) => {
         enemie.setAttribute("class","col");
             break;
     }
-    console.log(enemy);
+   
 
 });
 
@@ -166,7 +164,10 @@ fight.addEventListener("click", () => {
             ligne.appendChild(colonne);
         }
         conteneurStat.appendChild(ligne);
+
     }
+
+   result.textContent = bataille.result();
     
 })
 

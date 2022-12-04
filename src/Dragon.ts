@@ -5,7 +5,7 @@ export class Dragon extends Enemy {
     constructor(name: string, health: number, strength: number) {
         super(name, health, strength);
         this.round = 0;
-        this.race="Dragon";
+        this.race = "Dragon";
     }
     attack(opponent: Character): string {
         switch (this.round) {

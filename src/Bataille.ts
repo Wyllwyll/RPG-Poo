@@ -1,11 +1,3 @@
-//const valid = document.getElementById('valid')
-//const random = document.getElementById('random')
-//const stat =document.getElementById('stat')
-
-//valid.addEventListener('click',choix);
-//random.addEventListener('click',random);
-
-
 import { Enemy } from "./Enemy";
 import { Hero } from "./Hero";
 
@@ -45,9 +37,10 @@ export class Battle {
             }
             this.formatedStat.push(turnData);
             this.round += 1;
-
+            
 
         }
+ 
         if (this.hero.isAlive()) {
             this.stat.push(`... bye bye ${this.opponent.getName()}`);
             this.stat.push("Le combat est fini");
@@ -58,12 +51,17 @@ export class Battle {
             this.stat.push(`Le hero ${this.hero.getName()} est mort.`);
             this.stat.push("La partie est terminée");
         }
-        console.log(this.stat);
-
+}
+    result(){
+        if (this.hero.isAlive()) {
+            return `... bye bye ${this.opponent.getName()} , Le combat est fini ${this.hero.raiseXp(2)} ${this.hero.getName()} récupere 10% de health de ${this.opponent.getName()}, ${this.hero.regeneration(this.opponent.getHealth())}`;
             
-         }
+        }else{
+            return  `... bye bye ${this.hero.getName()}, Le hero ${this.hero.getName()} est mort. La partie est terminée.`;
+        }
     }
-   
+
+}
 
 
 
