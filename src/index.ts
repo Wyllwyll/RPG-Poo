@@ -21,6 +21,8 @@ let playerRace: any[] = [];
 const subName = document.getElementById('chooseName');
 const clickName = document.getElementById('button-addon2');
 const subMit = document.getElementById('submit');
+const hero = document.getElementById("hero")
+const enemie = document.getElementById("enemie")
 
 arrayHero.push("Elf", "Human", "Dwarf")
 
@@ -47,13 +49,20 @@ selectHero.addEventListener("change", function (e) {
     playerRace.push(who);
     switch (who) {
         case 'Elf': race = new Hero(`${nameChoice}`, 100, 20, "Elf");
-
+            hero.setAttribute("src","./img/elf-removebg-preview.png");
+            hero.setAttribute("class","col");
             break;
 
         case 'Human': race = new Hero(`${nameChoice}`, 100, 15, "Human");
+        hero.setAttribute("src","./img/humain-removebg-preview.png");
+        hero.setAttribute("class","col");
             break;
 
         case 'Dwarf': race = new Hero(`${nameChoice}`, 100, 20, "Dwarf");
+        hero.setAttribute("src","./img/Dwarf-removebg-preview.png");
+        hero.setAttribute("class","col");
+        
+
     }
 });
 
@@ -66,7 +75,7 @@ function pushHero(): void {
         nextOption.textContent = arrayHero[i]
     }
 }
-pushHero()
+pushHero();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const arrayEnemies: any[] = []
@@ -88,26 +97,32 @@ selectEnemies.addEventListener('change', (e) => {
 
     switch (wich) {
         case 'Assassin': enemy = new Assassin('Sram', 110, 12);
-
+        enemie.setAttribute("src","./img/assassins-removebg-preview.png");
+        enemie.setAttribute("class","col");
             break;
         case 'Berserker': enemy = new Berserker('Sacrieur', 110, 20);
-
+        enemie.setAttribute("src","./img/berserker-removebg-preview.png");
+        hero.setAttribute("class","col");
             break;
 
         case 'Dragon': enemy = new Dragon('Efrim', 200, 30);
-
+        enemie.setAttribute("src","./img/dragon-removebg-preview.png");
+        enemie.setAttribute("class","col");
             break;
 
         case 'Golem': enemy = new Golem('Golem de fer', 125, 15);
-
+        enemie.setAttribute("src","./img/golem-removebg-preview.png");
+        enemie.setAttribute("class","col");
             break;
 
         case 'Griffin': enemy = new griffin('Griffon en mousse', 120, 20);
-
+        enemie.setAttribute("src","./img/griffon-removebg-preview.png");
+        enemie.setAttribute("class","col");
             break;
 
         case "Werewolf": enemy = new Werewolf("Loup perdu", 150, 25)
-
+        enemie.setAttribute("src","./img/Werewolf-removebg-preview.png");
+        enemie.setAttribute("class","col");
             break;
     }
     console.log(enemy);

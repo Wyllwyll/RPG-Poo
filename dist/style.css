@@ -1,5 +1,16 @@
 .plateau {
+    background-image: url(./img/battleback1.png);
     margin: 5%;
     width: 90%;
+    z-index: 0;
+} 
+#hero {
+    z-index: index 1; ;
 
+}
+#enemie{
+    z-index: index 3;
+}
+#vs{
+    z-index: inxe 2;
 }

@@ -14,8 +14,8 @@ export class Battle {
     opponent: Enemy;
     round: number = 1;
     stat: string[] = [];
-    formatedStat: string[][] = [];
-
+    formatedStat: string[][]= [];
+    
     constructor(hero: Hero, opponent: Enemy) {
         this.hero = hero;
         this.opponent = opponent;
@@ -60,11 +60,10 @@ export class Battle {
         }
         console.log(this.stat);
 
+            
+         }
     }
-    random1(): void {
-        Math.floor(Math.random() * 10);
-        console.log(this.random1);
-    }
+   
 
 
 
@@ -75,6 +74,5 @@ export class Battle {
 
 
 
-}
 
 
